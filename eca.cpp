@@ -66,9 +66,10 @@ auto eca(int N, int iter, unsigned long rule, int k = 3, bool random = false){
     */
     checkParams(N, iter, k, rule);     // sanity checking inputs
     
-    const unsigned long mask = 1;   // single active bit for shifting and masking
-    // int 
+    const unsigned long mask = 1;      // single active bit for shifting and masking
     vector<vector<uint8_t>> world(iter, vector<uint8_t>(N, 0));
+    k = (k&1 ? k : k+1);  // even, or odd? i like odd
+
     if(random) {
         world[0] = randomStart(N);
     } else {
@@ -90,6 +91,8 @@ auto eca(int N, int iter, unsigned long rule, int k = 3, bool random = false){
     }
     return world;
 }
+
+
 
 
 int main(int argc, char *argv[]) {
