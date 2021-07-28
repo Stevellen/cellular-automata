@@ -12,7 +12,6 @@ def conway_life_conv(size, iteations, world=None, cmap=['white', 'black'], figsi
     """ Generates conways game of live based on size, iteration parameters using a 3x3 convolutional kernel. """
     if world is None:
         world  = np.random.randint(0, 2, (size,size))
-        world[size//2, size//2-1:size//2+2] = 1
     kernel = np.ones((3,3))
     kernel[1,1] = 0
 

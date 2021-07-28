@@ -25,7 +25,7 @@ void show_ca(vector<vector<uint8_t>> vec) {
 
 void checkParams(int N, int iter, int k, unsigned long rule) {
     // need to check for usable parameter values
-    if ((iter <= 0) || (N <= 0) || (rule < 0) || (k <= 0) || (k >= 64)) { 
+    if ((iter <= 0) || (N <= 0) || (rule < 0) || (k <= 0) || (k >= N)) { 
         cout << "I need positive integers, yo.\n";
         cout << "You gave me this shit: \n\t";
         cout << iter << ", " << N << ", " << rule << ", " << k <<  endl;
